@@ -16,19 +16,7 @@ export class Question {
   difficulty: number;
 
   @Column()
-  answer: string;
-
-  @Column()
-  explanation: string;
-
-  @Column()
-  is_active: boolean;
-
-  @Column()
   created_at: Date;
-
-  @Column()
-  updated_at: Date;
 
   @Column()
   deleted_at: Date;
