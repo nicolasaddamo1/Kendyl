@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { JobUser } from 'src/data/entities/job-user.entity';
+import { Interview } from 'src/interviews/entities/interview.entity';
+import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
 
 @Entity()
 export class User {
@@ -16,5 +18,14 @@ export class User {
 
   @Column()
   role: string;
+
+  @Column({ name: 'created_at', type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  createdAt: Date;
+
+  @OneToMany(() => JobUser, (jobUser) => jobUser.user)
+jobUsers: JobUser[];
+
+@OneToMany(() => Interview, (interview) => interview.candidate)
+interviews: Interview[];
 
 }

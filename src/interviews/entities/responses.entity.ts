@@ -1,5 +1,5 @@
+import { Question } from 'src/questions/entities/question.entity';
 import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
-import { Question } from './question.entity';
 
 @Entity()
 export class Response {
@@ -23,4 +23,7 @@ export class Response {
 
   @Column('jsonb')
   ai_feedback_json: object;
+
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  created_at: Date;
 }
