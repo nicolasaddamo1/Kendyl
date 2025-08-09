@@ -44,10 +44,10 @@ export class Job {
     is_active: boolean;
 
     @Column()
-    created_at: Date;
+    created_at: Date = new Date();
 
-    @Column()
-    updated_at: Date;
+    @Column( { nullable: true })
+    updated_at?: Date;
 
     @OneToMany(() => JobUser, (jobUser) => jobUser.job)
     jobUsers: JobUser[];

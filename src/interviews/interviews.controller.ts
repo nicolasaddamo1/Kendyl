@@ -8,12 +8,18 @@ export class InterviewController {
 
   @Post('schedule')
   async scheduleInterview(
-    @Body('candidateId') candidateId: string,
-    @Body('jobId') jobId: string,
-    @Body('date') date: string,
+    @Body('candidate_id') candidate_id: string,
+    @Body('job_id') job_id: string,
+    @Body('scheduledTime') scheduledTime: string, // primero string
   ) {
-    return this.interviewService.scheduleInterview(candidateId, jobId, new Date(date));
+    console.log(new Date(scheduledTime)); // convertir a Date
+    return this.interviewService.scheduleInterview(
+      candidate_id,
+      job_id,
+      new Date(scheduledTime), 
+    );
   }
+  
 
   @Patch(':id/reschedule')
   async rescheduleInterview(

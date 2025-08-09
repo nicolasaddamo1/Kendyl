@@ -81,7 +81,7 @@ export class HeygenService {
             voice: {
               type: "text",
               voice_id: "1bd001e7e50f421d891986aad5158bc8", // Voice por defecto
-              input_text: "Estoy funcionando",
+              input_text: "Hi shiv this is my prsentation",
               speed: 1.0
             },
             background: {

@@ -38,7 +38,7 @@ export class Interview {
   total_score: number;
 
   // Fecha programada
-  @Column({ type: 'timestamp' })
+  @Column({ type: 'timestamp', nullable: false })
   scheduledTime: Date;
 
   // Fecha completada
@@ -49,7 +49,7 @@ export class Interview {
   @Column({ type: 'int', nullable: true })
   duration?: number;
 
-  @Column()
+  @Column({  nullable: true })
   questions: string;
   // Futuras preguntas para IA (todavía sin usar)
   // @OneToMany(() => Question, (question) => question.interview)
